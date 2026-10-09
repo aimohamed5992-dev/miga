@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Miga.Api/Miga.Api.csproj" />
+    <Project Path="src/Miga.Domain/Miga.Domain.csproj" />
+    <Project Path="src/Miga.Infrastructure/Miga.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Miga.Api.Tests/Miga.Api.Tests.csproj" />
+  </Folder>
+</Solution>

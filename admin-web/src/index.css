@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+/* Tajawal (bundled, SIL OFL) — the same Arabic face as the mobile apps. */
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* Design tokens — brand scale built around the logo red #C4011A. */
+@theme {
+  --font-sans: 'Tajawal', system-ui, sans-serif;
+
+  --color-brand-50: #fff1f2;
+  --color-brand-100: #ffe1e4;
+  --color-brand-200: #ffc7cd;
+  --color-brand-300: #fd9ba6;
+  --color-brand-400: #f45f70;
+  --color-brand-500: #e8334a;
+  --color-brand-600: #c4011a;
+  --color-brand-700: #a30016;
+  --color-brand-800: #8e0013;
+  --color-brand-900: #5c000c;
+
+  --color-ink: #16161a;
+  --color-ink-2: #23232a;
+  --color-ink-3: #34343d;
+
+  --color-canvas: #f6f6f8;
+  --color-line: #ececf0;
+  --color-muted: #6b6b76;
+  --color-faint: #a1a1ab;
+
+  /* Logo red only: status is told by red intensity (solid = problem, outline = needs action,
+     soft = in progress) and neutral greys for done / normal — no blue, green or amber. */
+  --color-ok: #3a3a42;
+  --color-ok-soft: #efeff2;
+  --color-warn: #a30016;
+  --color-warn-soft: #ffffff;
+  --color-info: #a30016;
+  --color-info-soft: #fff1f2;
+  --color-danger: #c4011a;
+  --color-danger-soft: #ffe1e4;
+
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(22 22 26 / 0.04), 0 8px 24px -12px rgb(22 22 26 / 0.12);
+  --shadow-pop: 0 18px 50px -20px rgb(22 22 26 / 0.35);
+  --shadow-brand: 0 12px 30px -12px rgb(196 1 26 / 0.55);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Numbers (money, phones, codes) read best in tabular figures. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-brand-100);
+  color: var(--color-brand-800);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0.4;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-slide-in {
+  animation: slide-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Leaflet inside Tailwind: preflight's img max-width breaks tiles; use the app font in popups. */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: #e9eef2;
+}
+.leaflet-container a {
+  color: var(--color-brand-700);
+}
+.leaflet-container img {
+  max-width: none !important;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 16px;
+  box-shadow: var(--shadow-pop);
+}
+.leaflet-popup-content {
+  margin: 14px 16px;
+}

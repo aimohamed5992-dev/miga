@@ -1,0 +1,34 @@
+library;
+
+export 'package:flutter_animate/flutter_animate.dart';
+export 'package:miga_core/miga_core.dart';
+
+export 'src/auth/auth_widgets.dart';
+export 'src/auth/miga_wizard.dart';
+export 'src/auth/otp_page.dart';
+export 'src/auth/phone_login_page.dart';
+export 'src/design_gallery.dart';
+export 'src/intro/miga_intro_flow.dart';
+export 'src/intro/miga_onboarding.dart';
+export 'src/intro/miga_splash.dart';
+export 'src/miga_app_shell.dart';
+export 'src/theme/miga_colors.dart';
+export 'src/theme/miga_theme.dart';
+export 'src/widgets/campaign_widgets.dart';
+export 'src/widgets/miga_bar_chart.dart';
+export 'src/widgets/miga_buttons.dart';
+export 'src/widgets/miga_common.dart';
+export 'src/widgets/miga_feedback.dart';
+export 'src/widgets/miga_format.dart';
+export 'src/content/miga_content.dart';
+export 'src/widgets/miga_gallery.dart';
+export 'src/widgets/miga_info_pages.dart';
+export 'src/widgets/miga_illustration.dart';
+export 'src/widgets/miga_image.dart';
+export 'src/widgets/miga_inputs.dart';
+export 'src/widgets/miga_notifications.dart';
+export 'src/widgets/miga_picker.dart';
+export 'src/widgets/miga_states.dart';
+export 'src/widgets/miga_status.dart';
+export 'src/widgets/miga_success.dart';
+export 'src/widgets/miga_timeline.dart';
